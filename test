@@ -1,0 +1,24 @@
+kafka 설치 
+https://kafka.apache.org/downloads
+
+kafka폴더 생성 ->
+
+kafka_2.12-2.6.0.tgz 설치
+
+cmd 창에서 tar xzvf kafka_2.12-0.10.2.0.tgz 명령어를 입력하여 압출풀기
+
+압축 푼 폴더로 이동
+
+주키퍼 실행
+cmd창에서 bin/windows/zookeeper-server-start.bat config/zookeeper.properties
+
+kafka 실행(새로운 cmd)
+bin/windows/kafka-server-start.bat config/server.properties
+
+
+kafka 토픽확인
+bin/windows/kafka-topics.bat --list --zookeeper localhost:2181
+
+
+중간에 주키퍼 실행안될시 압축 푼 폴더로 이동하여 config폴더안에 server.properties파일에서 
+주키퍼 서버 zookeeper.connect=127.0.0.1:2181 로 변경
